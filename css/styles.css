@@ -27,9 +27,7 @@ h2 {
   cursor: pointer;
   margin: 5px;
 }
- .order span {
-
-
+.order span {
   top: 0;
   right: -20px;
   transition: 0.5s;
@@ -40,4 +38,18 @@ h2 {
 .order:hover span:after {
   opacity: 1;
   right: 0;
-} */
+}
+.col-md-3 img {
+  height: 150px;
+  width: 150px;
+}
+.order-section {
+  background-image: url(../img/pizzabg2.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  height: 100vh;
+  text-align: center;
+  color: white;
+}
