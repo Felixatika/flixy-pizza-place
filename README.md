@@ -9,16 +9,16 @@
  
  ## Live demo
  
- ##Installation instructions
+ ## Installation instructions
  
- ##Technologies used
+ ## Technologies used
  [HTML]
  [Bootstrap]
  [Javascript]
  [Css[
  [jquery]
  
- ##Contact information
+ ## Contact information
  Any contributions or question please reach out at [felixatika@gmail.com]
  
  ## License
