@@ -14,3 +14,30 @@ h2 {
   margin-top: 100px;
   margin-bottom: 20px;
 }
+.order {
+  border-radius: 4px;
+  background-color: #ff0800;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+ .order span {
+
+
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.order:hover span {
+  padding-right: 25px;
+}
+.order:hover span:after {
+  opacity: 1;
+  right: 0;
+} */
