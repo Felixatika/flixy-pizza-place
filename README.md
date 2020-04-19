@@ -12,15 +12,16 @@
  ##Installation instructions
  
  ##Technologies used
- HTML
- Bootstrap
- Javascript
- Css
- jquery
+ [HTML]
+ [Bootstrap]
+ [Javascript]
+ [Css[
+ [jquery]
  
  ##Contact information
  Any contributions or question please reach out at [felixatika@gmail.com]
  
- ##License
+ ## License
  Licensed under [MIT License](LICENSE)
+ 
  copyright (c) 2020 **Felix atika**
