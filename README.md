@@ -22,5 +22,5 @@
  Any contributions or question please reach out at [felixatika@gmail.com]
  
  ##License
- Licensed under [MIT License](License)
+ Licensed under [MIT License](LICENSE)
  copyright (c) 2020 **Felix atika**
