@@ -1,0 +1,10 @@
+body {
+  background-color: #cccccc;
+}
+.introduction {
+  background-image: url(.../img/pizzabg.jpg);
+  background-color: #cccccc;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
