@@ -1,4 +1,4 @@
-# flixy-pizza-place
+# flixy-pizza-parlour
 ## screenshot
 ## Author
 [Felix-atika](https://github.com/Felixatika)
