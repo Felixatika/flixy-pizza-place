@@ -34,6 +34,21 @@ $(document).ready(function () {
       default:
         console.log("error");
     }
+    switch (pizzaCrust) {
+      case "0":
+        crustCost = 0;
+        break;
+      case "Crispy":
+        crustCost = 150;
+        break;
+      case "Stuffed":
+        crustCost = 170;
+        break;
+      case "Glutten-free":
+        crustCost = 200;
+      default:
+        console.log("No cost!");
+    }
   });
 });
 
