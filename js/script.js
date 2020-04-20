@@ -1,3 +1,6 @@
+var cost, crustCost, toppingCost;
+var total = 0;
+
 $(document).ready(function () {
   $("#pic1")
     .mouseover(function () {
