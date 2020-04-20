@@ -137,6 +137,59 @@
                     handles provided at the bottom of this page
                         </p>
                     </div>
+                    <div class="order-ready">
+                        <h1>You order is</h1>
+                        <div id="order-is">
+                            <table class="table table-sm pizzatable">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Size</th>
+                                        <th scope="col">Crust</th>
+                                        <th scope="col">Topping</th>
+                                        <th scope="col">Total</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <td id="pizzasize"></td>
+                                    <td id="pizzacrust"></td>
+                                    <td id="pizzatopping"></td>
+                                    <td id="totals"></td>
+                                </tr>
+                            </table>
+                            <p id="pizzatotal"></p>
+                            <p id="totalbill"></p>
+                            <p id="addedprice">Delivery cost will be sh.100</p>
+                            <p id="finalmessage"></p>
+                        </div>
+                        <button class="btn btn-primary addPizza">Add another</button>
+                        <button class="btn btn-primary" id="checkout">Checkout</button>
+                        <button class="btn btn-primary deliver">Home delivery?</button>
+                    </div>
+                    <div class="delivery">
+                        <form action="">
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    id="name"
+                                    class="form-control mb-3"
+                                    placeholder="Name"
+                                >
+                                <input
+                                    type="number"
+                                    id="phone"
+                                    class="form-control mb-3"
+                                    placeholder="Pnone Number"
+                                >
+                                <input
+                                    type="text"
+                                    id="location"
+                                    class="form-control mb-3"
+                                    placeholder="Location for delivery"
+                                >
+                                <button class="btn btn-primary" id="final-order">Place order</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
