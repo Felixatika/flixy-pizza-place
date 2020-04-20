@@ -15,6 +15,25 @@ $(document).ready(function () {
     $.each($("input[name='toppings']:checked"), function () {
       pizzaTopping.push($(this).val());
     });
+    console.log(pizzaTopping.join(","));
+    switch (pizzaSize) {
+      case "0":
+        cost = 0;
+        break;
+      case "small":
+        cost = 500;
+        console.log(cost);
+        break;
+      case "medium":
+        cost = 800;
+        console.log(cost);
+        break;
+      case "large":
+        cost = 1100;
+        console.log(cost);
+      default:
+        console.log("error");
+    }
   });
 });
 
