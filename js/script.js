@@ -81,6 +81,59 @@ $(document).ready(function () {
       $.each($("input[name='toppings']:checked"), function () {
         pizzaTopping.push($(this).val());
       });
+      console.log(pizzaTopping.join(","));
+      switch (pizzaSize) {
+        case "0":
+          cost = 0;
+          break;
+        case "small":
+          cost = 500;
+          break;
+        case "medium":
+          cost = 750;
+          break;
+        case "large":
+          cost = 1100;
+          console.log(cost);
+        default:
+          console.log("error");
+      }
+      switch (pizzaCrust) {
+        case "0":
+          crustCost = 0;
+          break;
+        case "Crispy":
+          crustCost = 150;
+          break;
+        case "Stuffed":
+          crustCost = 170;
+          break;
+        case "Gluten-free":
+          crustCost = 200;
+          break;
+        default:
+          console.log("No cost");
+      }
+      let toppingPrice = pizzaTopping.length * 100;
+      console.log("toppings price" + toppingPrice);
+      total = cost + crustCost + toppingPrice;
+      console.log(total);
+
+      checkoutTotal = checkoutTotal + total;
+      console.log(checkoutTotal);
+      //constructor function
+      var newOrder = new orderPizza(pizzaSize, pizzaCrust, pizzaTopping, total);
+      $("#ordersmade").append(
+        '</td><td id="pizzasize">' +
+          newOrder.size +
+          '</td><td id="pizzacrust">' +
+          newOrder.crust +
+          '</td><td id="pizzatopping">' +
+          newOrder.topping +
+          '</td><td id="totals">' +
+          newOrder.total +
+          "</td></tr>"
+      );
     });
   });
 });
