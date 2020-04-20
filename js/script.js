@@ -49,6 +49,8 @@ $(document).ready(function () {
       default:
         console.log("No cost!");
     }
+    let toppingPrice = pizzaTopping.length * 70;
+    console.log("Toppings price" + toppingPrice);
   });
 });
 
