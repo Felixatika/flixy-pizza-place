@@ -51,6 +51,10 @@ $(document).ready(function () {
     }
     let toppingPrice = pizzaTopping.length * 70;
     console.log("Toppings price" + toppingPrice);
+
+    if (pizzaSize == "0" && pizzaCrust == "0") {
+      console.log("something must be selected");
+    }
   });
 });
 
