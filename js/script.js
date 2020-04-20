@@ -1,5 +1,22 @@
 var cost, crustCost, toppingCost;
 var total = 0;
+function orderPizza(size, crust, topping, total) {
+  this.size = size;
+  this.crust = crust;
+  this.topping = topping;
+  this.total = total;
+}
+//proceed button
+$(document).ready(function () {
+  $("button.proceed").click(function (event) {
+    let pizzaSize = $("#size option:selected").val();
+    let pizzaCrust = $("#crust option:selected").val();
+    let pizzaTopping = [];
+    $.each($("input[name='toppings']:checked"), function () {
+      pizzaTopping.push($(this).val());
+    });
+  });
+});
 
 $(document).ready(function () {
   $("#pic1")
