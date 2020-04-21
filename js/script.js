@@ -44,7 +44,7 @@ $(document).ready(function () {
       case "Stuffed":
         crustCost = 170;
         break;
-      case "Glutten-free":
+      case "Gluten-free":
         crustCost = 200;
       default:
         console.log("No cost!");
@@ -70,7 +70,7 @@ $(document).ready(function () {
 
     $("#pizzasize").html($("#size option:selected").val());
     $("#pizzacrust").html($("#crust option:selected").val());
-    $("#pizzatopping").html(pizzaTopping.join(","));
+    $("#pizzatopping").html(pizzaTopping.join(", "));
     $("#totals").html(total);
 
     //add pizza button
@@ -81,7 +81,7 @@ $(document).ready(function () {
       $.each($("input[name='toppings']:checked"), function () {
         pizzaTopping.push($(this).val());
       });
-      console.log(pizzaTopping.join(","));
+      console.log(pizzaTopping.join(", "));
       switch (pizzaSize) {
         case "0":
           cost = 0;
@@ -90,7 +90,7 @@ $(document).ready(function () {
           cost = 500;
           break;
         case "medium":
-          cost = 750;
+          cost = 800;
           break;
         case "large":
           cost = 1100;
@@ -110,11 +110,10 @@ $(document).ready(function () {
           break;
         case "Gluten-free":
           crustCost = 200;
-          break;
         default:
           console.log("No cost");
       }
-      let toppingPrice = pizzaTopping.length * 100;
+      let toppingPrice = pizzaTopping.length * 70;
       console.log("toppings price" + toppingPrice);
       total = cost + crustCost + toppingPrice;
       console.log(total);
@@ -124,7 +123,7 @@ $(document).ready(function () {
       //constructor function
       var newOrder = new orderPizza(pizzaSize, pizzaCrust, pizzaTopping, total);
       $("#ordersmade").append(
-        '</td><td id="pizzasize">' +
+        '<tr><td id="pizzasize">' +
           newOrder.size +
           '</td><td id="pizzacrust">' +
           newOrder.crust +
@@ -148,7 +147,7 @@ $(document).ready(function () {
     //home delivery button
     $("button.deliver").click(function () {
       $(".pizzatable").hide();
-      $(".order-ready h2").hide();
+      $(".order-ready h1").hide();
       $(".delivery").slideDown(1000);
       $("#addedprice").hide();
       $("button.deliver").hide();
@@ -173,18 +172,18 @@ $(document).ready(function () {
 
       if (
         $("input#name").val() &&
-        $("input#phone").val &&
+        $("input#phone").val() &&
         $("input#location").val() != ""
       ) {
-        $("#finallmessage").append(
+        $("#finalmessage").append(
           person +
             ", We have recieved your order and it will be delivered to you at " +
             location +
             ". Prepare sh. " +
-            deliceryamount
+            deliveryAmount
         );
         $("#totalbill").hide();
-        $("#finallmessage").slideDown(1200);
+        $("#finalmessage").slideDown(1200);
       } else {
         alert("Please fill in the details for delivery!");
         $(".delivery").show();
@@ -213,7 +212,7 @@ $(document).ready(function () {
     .mouseover(function () {
       $("#overlay1").show();
       var overlay1 = document.getElementById(overlay1);
-      overlay1.style.border = "3px white solid";
+      overlay1.style.border = "3px blue solid";
       overlay1.style.width = "50%";
       overlay1.style.height = "50%";
     })
@@ -226,10 +225,10 @@ $(document).ready(function () {
   $("#pic3")
     .mouseover(function () {
       $("#overlay2").show();
-      var overlay = document.getElementById(overlay2);
+      var overlay2 = document.getElementById(overlay2);
       overlay2.style.border = "3px white solid";
-      overlay2.style.width = "75%";
-      overlay2.style.height = "70%";
+      overlay2.style.width = "50%";
+      overlay2.style.height = "50%";
     })
     .mouseout(function () {
       $("#overlay2").hide();
