@@ -1,5 +1,6 @@
 # flixy-pizza-parlour
 ## screenshot
+![user interface image](images/landfinal.png)
 ## Author
 [Felix-atika](https://github.com/Felixatika)
  ## Description
