@@ -175,18 +175,20 @@ $(document).ready(function () {
         $("input#phone").val() &&
         $("input#location").val() != ""
       ) {
-        $("#finalmessage").append(
-          person +
-            ", We have recieved your order and it will be delivered to you at " +
-            location +
-            ". Prepare sh. " +
-            deliveryAmount
+        alert(
+          $("#finalmessage").append(
+            person +
+              ", We have recieved your order and it will be delivered to you at " +
+              location +
+              ". Prepare sh. " +
+              deliveryAmount
+          )
         );
         $("#totalbill").hide();
         $("#finalmessage").slideDown(1200);
       } else {
         alert("Please fill in the details for delivery!");
-        $(".delivery").show();
+        $(".delivery").hide();
         $("button#final-order").show();
       }
     });
