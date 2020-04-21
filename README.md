@@ -26,7 +26,7 @@
  [Css] styling user interface
  [jquery] library for javascript
   
-  ##Known bugs
+  ## Known bugs
   all toppings have the same price irregardless of the size of pizza ordered.
  
  ## Contact information
