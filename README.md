@@ -9,12 +9,12 @@
  they choose.It also allows the clients to enter their location for delivery.
  
  ## Live demo
-https://felixatika.github.io/flixy-pizza-place/
+(https://felixatika.github.io/flixy-pizza-place/)
  
  ## Installation instructions
  * Open Terminal {Ctrl+Alt+T}
 
-* git clone ``
+* git clone (https://github.com/Felixatika/flixy-pizza-place)
 
 * cd flixy-pizza-parlour
 
