@@ -137,15 +137,15 @@ $(document).ready(function () {
       console.log(newOrder);
     });
     // Checkout button
-    $("button#checkout").click(function(){ 
+    $("button#checkout").click(function () {
       $("button#checkout").hide();
       $("button.addPizza").hide();
       $("button.deliver").slideDown(1000);
       $("#addedprice").slideDown(1000);
-      console.log("Your total bills is sh. "+checkoutTotal);
-      $("#pizzatotal").append("Your bill is sh. "+checkoutTotal);
+      console.log("Your total bills is sh. " + checkoutTotal);
+      $("#pizzatotal").append("Your bill is sh. " + checkoutTotal);
     });
-//home delivery button
+    //home delivery button
     $("button.deliver").click(function () {
       $(".pizzatable").hide();
       $(".order-ready h2").hide();
@@ -155,8 +155,9 @@ $(document).ready(function () {
       $("#pizzatotal").hide();
       let deliveryAmount = checkoutTotal + 100;
       console.log("You will pay sh. " + deliveryAmount + " on delivery");
-      $("#totalbill").append("Your bill plus delivery fee is: " + deliveryAmount);
-
+      $("#totalbill").append(
+        "Your bill plus delivery fee is: " + deliveryAmount
+      );
     });
     //when one clicks place order button
     $("button#final-order").click(function (event) {
@@ -170,18 +171,27 @@ $(document).ready(function () {
       let phone = $("input#phone").val();
       let location = $("input#location").val();
 
-      if ($("input#name")).val() && $("input#phone").val && $("input#location").val() != ""){
-        $("#finallmessage").append(person+", We have recieved your order and it will be delivered to you at "+location+ ". Prepare sh. "+deliceryamount);
+      if (
+        $("input#name").val() &&
+        $("input#phone").val &&
+        $("input#location").val() != ""
+      ) {
+        $("#finallmessage").append(
+          person +
+            ", We have recieved your order and it will be delivered to you at " +
+            location +
+            ". Prepare sh. " +
+            deliceryamount
+        );
         $("#totalbill").hide();
         $("#finallmessage").slideDown(1200);
-      }
-      else {
+      } else {
         alert("Please fill in the details for delivery!");
         $(".delivery").show();
         $("button#final-order").show();
       }
-      }
-    })
+    });
+    event.preventDefault();
   });
 });
 

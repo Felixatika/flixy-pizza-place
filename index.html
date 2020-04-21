@@ -36,23 +36,24 @@
         </div>
         <div class="container-fluid order-section">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-5 bg-success">
                     <h2>Order quality pizza now</h2>
                     <form action="">
                         <label for="size">Choose pizza size:</label>
                         <br>
                         <select class="browser-default custom-select custom-select-md mb-3" id="size">
                             <option selected value="0">Select size here</option>
-                            <option value="small">Small</option>
-                            <option value="medium">Medium</option>
-                            <option value="large">large</option>
+                            <option value="small">Small -- sh. 500</option>
+                            <option value="medium">Medium -- sh. 800</option>
+                            <option value="large">large -- sh. 1100</option>
                         </select>
                         <label for="crust">Choose your favorite crust:</label>
                         <br>
                         <select class="browser-default custom-select custom-select-md mb-3" id="crust">
-                            <option value="crispy">Crispy</option>
-                            <option value="stuffed">Stuffed</option>
-                            <option value="gluten-free">Gluten-free</option>
+                            <option selected value="0">Select crust here</option>
+                            <option value="crispy">Crispy -- sh. 150</option>
+                            <option value="stuffed">Stuffed -- sh. 170</option>
+                            <option value="gluten-free">Gluten-free -- sh. 200</option>
                         </select>
                         <label for="toppings">Choose your preffered toppings at sh. 100 each</label>
                         <br>
@@ -65,7 +66,7 @@
                                 name="toppings"
                                 checked
                             >
-                            <label class="custom-control-label">Extra cheese</label>
+                            <label class="custom-control-label" for="extra-cheese">Extra cheese</label>
                         </div>
                         <br>
                         <div class="custom-control custom-checkbox custom-control-inline">
@@ -76,7 +77,7 @@
                                 value="green-peppers"
                                 name="toppings"
                             >
-                            <label class="custom-control-label">Green peppers</label>
+                            <label class="custom-control-label" for="green-peppers">Green peppers</label>
                         </div>
                         <br>
                         <div class="custom-control custom-checkbox custom-control-inline">
@@ -87,7 +88,7 @@
                                 value="sausage"
                                 name="toppings"
                             >
-                            <label class="custom-control-label">Sausage</label>
+                            <label class="custom-control-label" for="sausage">Sausage</label>
                         </div>
                         <br>
                         <div class="custom-control custom-checkbox custom-control-inline">
@@ -98,7 +99,7 @@
                                 value="bacon"
                                 name="toppings"
                             >
-                            <label class="custom-control-label">Bacon</label>
+                            <label class="custom-control-label" for="bacon">Bacon</label>
                         </div>
                         <br>
                         <div class="custom-control custom-checkbox custom-control-inline">
@@ -109,7 +110,7 @@
                                 value="chips"
                                 name="toppings"
                             >
-                            <label class="custom-control-label">chips</label>
+                            <label class="custom-control-label" for="chips">chips</label>
                         </div>
                         <br>
                         <div class="custom-control custom-checkbox custom-control-inline">
@@ -120,13 +121,14 @@
                                 value="pepperoni"
                                 name="toppings"
                             >
-                            <label class="custom-control-label">Pepperoni</label>
+                            <label class="custom-control-label" for="pepperoni">Pepperoni</label>
                         </div>
+                        <br>
                         <br>
                         <button type="submit" class="btn btn-primary proceed" value="proceed">PROCEED</button>
                     </form>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-7 bg-info">
                     <div id="info">
                         <p>
                             Your order is being processed, it will be delivered 
@@ -149,19 +151,21 @@
                                         <th scope="col">Total</th>
                                     </tr>
                                 </thead>
-                                <tr>
-                                    <td id="pizzasize"></td>
-                                    <td id="pizzacrust"></td>
-                                    <td id="pizzatopping"></td>
-                                    <td id="totals"></td>
-                                </tr>
+                                <tbody id="ordersmade">
+                                    <tr>
+                                        <td id="pizzasize"></td>
+                                        <td id="pizzacrust"></td>
+                                        <td id="pizzatopping"></td>
+                                        <td id="totals"></td>
+                                    </tr>
+                                </tbody>
                             </table>
                             <p id="pizzatotal"></p>
                             <p id="totalbill"></p>
                             <p id="addedprice">Delivery cost will be sh.100</p>
                             <p id="finalmessage"></p>
                         </div>
-                        <button class="btn btn-primary addPizza">Add another</button>
+                        <button class="btn btn-primary addPizza">Add pizza</button>
                         <button class="btn btn-primary" id="checkout">Checkout</button>
                         <button class="btn btn-primary deliver">Home delivery?</button>
                     </div>
@@ -178,7 +182,7 @@
                                     type="number"
                                     id="phone"
                                     class="form-control mb-3"
-                                    placeholder="Pnone Number"
+                                    placeholder="Phone Number"
                                 >
                                 <input
                                     type="text"
@@ -193,8 +197,8 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid contacts">
-            <div class="row">
+        <div class="container-fluid contacts" id="contact">
+            <div class="row" id="contactinfo">
                 <div class="col-md-4">
                     <h1>Contact us</h1>
                     <p>flixy Pizza parlour</p>
