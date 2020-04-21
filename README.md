@@ -9,6 +9,7 @@
  they choose.It also allows the clients to enter their location for delivery.
  
  ## Live demo
+https://felixatika.github.io/flixy-pizza-place/
  
  ## Installation instructions
  * Open Terminal {Ctrl+Alt+T}
@@ -19,11 +20,11 @@
 
 * code . or atom . depending on the text editor of your choise.
  ## Technologies used
- [HTML]
- [Bootstrap]
- [Javascript]
- [Css[
- [jquery]
+ [HTML] for user interface design
+ [Bootstrap] styling user interface
+ [Javascript] for business logic
+ [Css] styling user interface
+ [jquery] library for javascript
   
   ##Known bugs
   all toppings have the same price irregardless of the size of pizza ordered.
