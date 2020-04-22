@@ -8,7 +8,7 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  /* height: 100vh; */
   text-align: center;
   color: #4fd1c5;
   padding: 50px;
@@ -109,8 +109,10 @@ h2 {
 }
 
 .col-md-4 img {
-  height: 350px;
+  height: 300px;
   width: 350px;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
 }
 .products {
   display: flex;
@@ -199,23 +201,23 @@ h2 {
     padding-top: 20%;
     font-size: 26px;
   }
-  .col-md-4 img {
+  /* .col-md-4 img {
     width: 400px;
     margin: 20px;
   }
   .products {
     margin-left: 6%;
     margin-right: 10%;
-  }
+  } */
   button {
     margin-left: 2%;
     padding-bottom: 30px;
     margin-bottom: 20px;
   }
-  .contacts {
+  /* .contacts {
     width: 50%;
     margin: 20px;
-  }
+  } */
 }
 @media only screen and(max-width: 425px) {
   #overlay,
@@ -227,14 +229,14 @@ h2 {
     left: 16px;
     padding-top: 30%;
   }
-  .col-md-4 img {
+  /* .col-md-4 img {
     width: 100%;
     margin: 20px;
   }
   .products {
     margin-left: 2%;
     margin-right: 16%;
-  }
+  } */
   button {
     margin-left: 2%;
     padding-bottom: 30px;
@@ -242,49 +244,19 @@ h2 {
   }
 }
 @media only screen and (max-width: 425px) {
-  #overlay,
-  #overlay1,
-  #overlay2 {
-    width: 100%;
-    height: 100%;
-    top: 20px;
-    left: 16px;
-    padding-top: 30%;
-  }
-  .col-md-4 img {
-    width: 100%;
-    margin: 20px;
-  }
-  .products {
-    margin-left: 2%;
-    margin-right: 16%;
-  }
-  button {
-    margin-left: 2%;
-    padding-bottom: 30px;
-    margin-bottom: 20px;
+  .order-section {
+    background-image: url(../img/pizzz.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    /* height: 100vh; */
+    color: white;
   }
   .contacts {
-    margin: 2px 2px 2px 2px;
+    background-color: #b3a5a5;
+    height: 50vh;
   }
-}
-@media only screen and (max-width: 420px) {
-  [class*="col-"] {
-    width: 50%;
-  }
-}
-.order-section {
-  background-image: url(../img/pizzz.jpg);
-  background-position: center;
-  background-size: cover;
-  background-color: #cccccc;
-  background-repeat: no-repeat;
-  height: 100vh;
-  color: white;
-}
-.contacts {
-  background-color: #b3a5a5;
-  height: 50vh;
 }
 footer {
   text-align: center;

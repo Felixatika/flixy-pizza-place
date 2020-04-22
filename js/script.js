@@ -1,6 +1,6 @@
 var cost, crustCost, toppingCost;
 var total = 0,
-  allOrders;
+  AllOrders = 0;
 function orderPizza(size, crust, topping, total) {
   this.size = size;
   this.crust = crust;
@@ -34,8 +34,10 @@ $(document).ready(function () {
       case "large":
         cost = 1100;
         console.log(cost);
+        break;
       default:
         console.log("error");
+        break;
     }
     switch (pizzaCrust) {
       case "0":
@@ -51,7 +53,9 @@ $(document).ready(function () {
         crustCost = 200;
       default:
         console.log("No cost!");
+        break;
     }
+
     let toppingPrice = pizzaTopping.length * 70;
     console.log("Toppings price" + toppingPrice);
 
@@ -62,12 +66,12 @@ $(document).ready(function () {
       $("div.order-ready").hide();
       alert("Please select pizza size and crust");
     } else {
-      allOrders = 1;
+      AllOrders = 1;
       $("#create-order").hide();
       $("#blankks").show();
       $(".addtoorder").show();
       $("button.proceed").hide();
-      //$("#info").hide();
+      // $("#info").show();
       $("#orderoptions").show();
       $("div.order-ready").slideDown(1000);
     }
@@ -78,7 +82,7 @@ $(document).ready(function () {
 
     $("#pizzasize").html($("#size option:selected").val());
     $("#pizzacrust").html($("#crust option:selected").val());
-    $("#pizzatopping").html(pizzaTopping.join(", "));
+    $("#pizzatopping").html(pizzaTopping.join(","));
     $("#totals").html(total);
 
     //add pizza button
@@ -94,7 +98,7 @@ $(document).ready(function () {
       $.each($("input[name='toppings']:checked"), function () {
         pizzaTopping.push($(this).val());
       });
-      console.log(pizzaTopping.join(", "));
+      console.log(pizzaTopping.join(","));
       switch (pizzaSize) {
         case "0":
           cost = 0;
@@ -103,11 +107,10 @@ $(document).ready(function () {
           cost = 500;
           break;
         case "medium":
-          cost = 800;
+          cost = 750;
           break;
         case "large":
           cost = 1100;
-          console.log(cost);
           break;
         default:
           console.log("error");
@@ -130,7 +133,7 @@ $(document).ready(function () {
           console.log("No cost");
           break;
       }
-      let toppingPrice = pizzaTopping.length * 70;
+      let toppingPrice = pizzaTopping.length * 100;
       console.log("toppings price" + toppingPrice);
       total = cost + crustCost + toppingPrice;
       console.log(total);
@@ -150,7 +153,7 @@ $(document).ready(function () {
           newOrder.total +
           "</td></tr>"
       );
-      allOrders++;
+      AllOrders++;
       $("#create-order").hide();
       $("#blankks").show();
       $(".addtoorder").show();
@@ -164,8 +167,7 @@ $(document).ready(function () {
       $("button.deliver").slideDown(1000);
       $("#addedprice").slideDown(1000);
       console.log("Your total bills is sh. " + checkoutTotal);
-      //alert checkoutTotal
-      // $("#pizzatotal").append("Your bill is sh. " + checkoutTotal);
+      // alert(checkoutTotal);
       $(".amountstatus").append(
         "<h4>Selected Items In Your Pizza(" +
           AllOrders +
@@ -190,21 +192,20 @@ $(document).ready(function () {
       alert(yourcheckout);
       $("#yourcheckoutitems").html(yourcheckout);
 
-      // $("button.deliver").click(function () {
-      //   $(".pizzatable").hide();
-      //$(".delivery").slideDown(1000);
-      //$(".order-ready h1").hide();
+      // $(".pizzatable").hide();
+      // $(".order-ready h2").hide();
       $(".delivery").slideDown(1000);
       // $("#addedprice").hide();
       $("button.deliver").hide();
       // $("#pizzatotal").hide();
       $("#final-order").show();
+
       let deliveryAmount = checkoutTotal + 100;
       console.log("You will pay sh. " + deliveryAmount + " on delivery");
       $(".amountstatus").append(
         "<h4>Your bill plus delivery fee Is : " +
           deliveryAmount +
-          "</h4>Ensure You Correctly Fill The Following Form"
+          "</h4>Ensure You Collectly Fill The Following Form"
       );
       $("#totalbill").append(
         "Your bill plus delivery fee is: " + deliveryAmount
@@ -222,21 +223,20 @@ $(document).ready(function () {
       let person = $("input#name").val();
       let phone = $("input#phone").val();
       let location = $("input#location").val();
-
       if (
-        $("input#name").val() &&
-        $("input#phone").val() &&
+        $("input#name").val() != "" &&
+        $("input#phone").val() != "" &&
         $("input#location").val() != ""
       ) {
-        $("#finalmessage").append(
+        $("#finallmessage").append(
           person +
             ", We have recieved your order and it will be delivered to you at " +
             location +
             ". Prepare sh. " +
             deliveryAmount
         );
-        //$("#totalbill").hide();
-        $("#finalmessage").slideDown(1200);
+        // $("#totalbill").hide();
+        $("#finallmessage").slideDown(1200);
         $(".deliveryinfo").hide();
         $(".amountstatus").html("");
         $(".amountstatus").append(
@@ -249,6 +249,7 @@ $(document).ready(function () {
         $(".amountstatus").append(
           "<h4>Your bill plus delivery fee Is : " + deliveryAmount + "</h4>"
         );
+        // $(".amountstatus").append("<h5>"+person+", We have recieved your order and it will be delivered to you at " + location+" Preapare Sh. "+deliveryAmount+"</h5>");
       } else {
         alert("Please fill in the details for delivery!");
         $(".delivery").show();
@@ -263,7 +264,7 @@ $(document).ready(function () {
   $("#pic1")
     .mouseover(function () {
       $("#overlay").show();
-      var overlay = document.getElementById(overlay);
+      var overlay1 = document.getElementById(overlay);
       overlay.style.border = "3px white solid";
       overlay.style.width = "75%";
       overlay.style.height = "70%";
@@ -276,8 +277,8 @@ $(document).ready(function () {
   $("#pic2")
     .mouseover(function () {
       $("#overlay1").show();
-      var overlay1 = document.getElementById(overlay1);
-      overlay1.style.border = "3px blue solid";
+      var overlay = document.getElementById(overlay1);
+      overlay1.style.border = "3px white solid";
       overlay1.style.width = "75%";
       overlay1.style.height = "70%";
     })
@@ -290,7 +291,7 @@ $(document).ready(function () {
   $("#pic3")
     .mouseover(function () {
       $("#overlay2").show();
-      var overlay2 = document.getElementById(overlay2);
+      var overlay = document.getElementById(overlay2);
       overlay2.style.border = "3px white solid";
       overlay2.style.width = "75%";
       overlay2.style.height = "70%";
