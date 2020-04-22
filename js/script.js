@@ -187,10 +187,10 @@ $(document).ready(function () {
     });
     //home delivery button
     $("button.deliver").click(function () {
-      $(".yourcheckout").show();
-      var yourcheckout = $("#ordersmade").html();
-      console.log(yourcheckout);
-      $("#yourcheckoutitems").html(yourcheckout);
+      // $(".yourcheckout").show();
+      // var yourcheckout = $("#ordersmade").html();
+      // alert(yourcheckout);
+      // $("#yourcheckoutitems").html(yourcheckout);
 
       //$(".pizzatable").hide();
       // $(".order-ready h2").hide();
@@ -228,7 +228,7 @@ $(document).ready(function () {
         $("input#phone").val() != "" &&
         $("input#location").val() != ""
       ) {
-        $("#finalmessage").append(
+        $("#finallmessage").append(
           person +
             ", We have received your order and it will be delivered to you at " +
             location +
@@ -236,7 +236,7 @@ $(document).ready(function () {
             deliveryAmount
         );
         // $("#totalbill").hide();
-        $("#finalmessage").slideDown(1200);
+        $("#finallmessage").slideDown(1200);
         $(".deliveryinfo").hide();
         $(".amountstatus").html("");
         $(".amountstatus").append(
