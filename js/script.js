@@ -252,7 +252,7 @@ $(document).ready(function () {
       $(".amountstatus").append(
         "<h4>Your bill plus delivery fee Is : " +
           deliveryAmount +
-          "</h4>Ensure You Collectly Fill The Following Form"
+          "</h4>Ensure You Correctly Fill The Following Form"
       );
       $("#totalbill").append(
         "Your bill plus delivery fee is: " + deliveryAmount
@@ -276,7 +276,7 @@ $(document).ready(function () {
       ) {
         $("#finallmessage").append(
           person +
-            ", We have recieved your order and it will be delivered to you at " +
+            ", We have received your order and it will be delivered to you at " +
             location +
             ". Prepare sh. " +
             deliveryAmount
