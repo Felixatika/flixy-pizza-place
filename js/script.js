@@ -175,14 +175,12 @@ $(document).ready(function () {
         $("input#phone").val() &&
         $("input#location").val() != ""
       ) {
-        alert(
-          $("#finalmessage").append(
-            person +
-              ", We have recieved your order and it will be delivered to you at " +
-              location +
-              ". Prepare sh. " +
-              deliveryAmount
-          )
+        $("#finalmessage").append(
+          person +
+            ", We have recieved your order and it will be delivered to you at " +
+            location +
+            ". Prepare sh. " +
+            deliveryAmount
         );
         $("#totalbill").hide();
         $("#finalmessage").slideDown(1200);
