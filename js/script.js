@@ -1,5 +1,6 @@
 var cost, crustCost, toppingCost;
-var total = 0;
+var total = 0,
+  allOrders;
 function orderPizza(size, crust, topping, total) {
   this.size = size;
   this.crust = crust;
@@ -8,6 +9,8 @@ function orderPizza(size, crust, topping, total) {
 }
 //proceed button
 $(document).ready(function () {
+  $("#size").val("0");
+  $("#crust").val("0");
   $("button.proceed").click(function (event) {
     let pizzaSize = $("#size option:selected").val();
     let pizzaCrust = $("#crust option:selected").val();
