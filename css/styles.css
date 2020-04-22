@@ -133,14 +133,7 @@ h2 {
     padding-top: 20%;
     font-size: 26px;
   }
-  /* .col-md-3 img {
-    width: 400px;
-    margin: 20px;
-  } */
-  /* .products {
-    margin-left: 6%;
-    margin-right: 10%;
-  }*/
+
   button {
     margin-left: 2%;
     padding-bottom: 30px;
@@ -188,4 +181,5 @@ h2 {
 }
 footer {
   text-align: center;
+  color: black;
 }
