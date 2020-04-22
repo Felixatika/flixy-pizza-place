@@ -58,12 +58,17 @@ $(document).ready(function () {
     if (pizzaSize == "0" && pizzaCrust == "0") {
       console.log("something must be selected");
       $("button.proceed").show();
-      $("#info").show();
+      // $("#info").show();
       $("div.order-ready").hide();
       alert("Please select pizza size and crust");
     } else {
+      allOrders = 1;
+      $("#create-order").hide();
+      $("#blankks").show();
+      $(".addtoorder").show();
       $("button.proceed").hide();
-      $("#info").hide();
+      //$("#info").hide();
+      $("#orderoptions").show();
       $("div.order-ready").slideDown(1000);
     }
     total = cost + crustCost + toppingPrice;
@@ -78,6 +83,11 @@ $(document).ready(function () {
 
     //add pizza button
     $("button.addPizza").click(function () {
+      $("#create-order").show();
+      $("#blankks").hide();
+      $("button.addPizza").hide();
+    });
+    $("button.addtoorder").click(function () {
       let pizzaSize = $("#size option:selected").val();
       let pizzaCrust = $("#crust option:selected").val();
       let pizzaTopping = [];
@@ -98,8 +108,10 @@ $(document).ready(function () {
         case "large":
           cost = 1100;
           console.log(cost);
+          break;
         default:
           console.log("error");
+          break;
       }
       switch (pizzaCrust) {
         case "0":
@@ -113,8 +125,10 @@ $(document).ready(function () {
           break;
         case "Gluten-free":
           crustCost = 200;
+          break;
         default:
           console.log("No cost");
+          break;
       }
       let toppingPrice = pizzaTopping.length * 70;
       console.log("toppings price" + toppingPrice);
@@ -136,6 +150,11 @@ $(document).ready(function () {
           newOrder.total +
           "</td></tr>"
       );
+      allOrders++;
+      $("#create-order").hide();
+      $("#blankks").show();
+      $(".addtoorder").show();
+      $("button.addPizza").show();
       console.log(newOrder);
     });
     // Checkout button
@@ -145,21 +164,52 @@ $(document).ready(function () {
       $("button.deliver").slideDown(1000);
       $("#addedprice").slideDown(1000);
       console.log("Your total bills is sh. " + checkoutTotal);
+      //alert checkoutTotal
+      // $("#pizzatotal").append("Your bill is sh. " + checkoutTotal);
+      $(".amountstatus").append(
+        "<h4>Selected Items In Your Pizza(" +
+          AllOrders +
+          ")<br>Your bill is sh. " +
+          checkoutTotal +
+          "</h4>"
+      );
       $("#pizzatotal").append("Your bill is sh. " + checkoutTotal);
+      $(".yourcheckout").show();
+      var yourcheckout = $("#ordersmade").html();
+      $("#yourcheckoutitems").html(yourcheckout);
+      $("#order-is").hide();
+      $("#info").show();
+      $(".deliveryform").show();
+      $(".deliveryinfo").hide();
+      $("#final-order").show();
     });
     //home delivery button
     $("button.deliver").click(function () {
-      $(".pizzatable").hide();
-      $(".order-ready h1").hide();
+      $(".yourcheckout").show();
+      var yourcheckout = $("#ordersmade").html();
+      alert(yourcheckout);
+      $("#yourcheckoutitems").html(yourcheckout);
+
+      // $("button.deliver").click(function () {
+      //   $(".pizzatable").hide();
+      //$(".delivery").slideDown(1000);
+      //$(".order-ready h1").hide();
       $(".delivery").slideDown(1000);
-      $("#addedprice").hide();
+      // $("#addedprice").hide();
       $("button.deliver").hide();
-      $("#pizzatotal").hide();
+      // $("#pizzatotal").hide();
+      $("#final-order").show();
       let deliveryAmount = checkoutTotal + 100;
       console.log("You will pay sh. " + deliveryAmount + " on delivery");
+      $(".amountstatus").append(
+        "<h4>Your bill plus delivery fee Is : " +
+          deliveryAmount +
+          "</h4>Ensure You Correctly Fill The Following Form"
+      );
       $("#totalbill").append(
         "Your bill plus delivery fee is: " + deliveryAmount
       );
+      $(".deliveryinfo").show();
     });
     //when one clicks place order button
     $("button#final-order").click(function (event) {
@@ -185,11 +235,23 @@ $(document).ready(function () {
             ". Prepare sh. " +
             deliveryAmount
         );
-        $("#totalbill").hide();
+        //$("#totalbill").hide();
         $("#finalmessage").slideDown(1200);
+        $(".deliveryinfo").hide();
+        $(".amountstatus").html("");
+        $(".amountstatus").append(
+          "<h4>Selected Items In Your Pizza(" +
+            AllOrders +
+            ")<br>Your bill is sh. " +
+            checkoutTotal +
+            "</h4>"
+        );
+        $(".amountstatus").append(
+          "<h4>Your bill plus delivery fee Is : " + deliveryAmount + "</h4>"
+        );
       } else {
         alert("Please fill in the details for delivery!");
-        $(".delivery").hide();
+        $(".delivery").show();
         $("button#final-order").show();
       }
     });
@@ -203,8 +265,8 @@ $(document).ready(function () {
       $("#overlay").show();
       var overlay = document.getElementById(overlay);
       overlay.style.border = "3px white solid";
-      overlay.style.width = "50%";
-      overlay.style.height = "50%";
+      overlay.style.width = "75%";
+      overlay.style.height = "70%";
     })
     .mouseout(function () {
       $("#overlay").hide();
@@ -216,8 +278,8 @@ $(document).ready(function () {
       $("#overlay1").show();
       var overlay1 = document.getElementById(overlay1);
       overlay1.style.border = "3px blue solid";
-      overlay1.style.width = "50%";
-      overlay1.style.height = "50%";
+      overlay1.style.width = "75%";
+      overlay1.style.height = "70%";
     })
     .mouseout(function () {
       $("#overlay1").hide();
@@ -230,8 +292,8 @@ $(document).ready(function () {
       $("#overlay2").show();
       var overlay2 = document.getElementById(overlay2);
       overlay2.style.border = "3px white solid";
-      overlay2.style.width = "50%";
-      overlay2.style.height = "50%";
+      overlay2.style.width = "75%";
+      overlay2.style.height = "70%";
     })
     .mouseout(function () {
       $("#overlay2").hide();
