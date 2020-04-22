@@ -162,50 +162,97 @@ $(document).ready(function () {
     });
     // Checkout button
     $("button#checkout").click(function () {
-      $("button#checkout").hide();
       $("button.addPizza").hide();
-      $("button.deliver").slideDown(1000);
+      $("button#final-order").slideDown(1000);
       $("#addedprice").slideDown(1000);
       console.log("Your total bills is sh. " + checkoutTotal);
       // alert(checkoutTotal);
+      // $(".amountstatus").append("<h4>Selected Items In Your Pizza("+allOrders+")<br>Your bill is sh. " + checkoutTotal+"</h4>");
+      // $("#pizzatotal").append("Your bill is sh. " + checkoutTotal);
+      $(".yourcheckout").show();
+      var yourCheckout = $("#ordersmade").html();
+      $("#yourcheckoutitems").html(yourCheckout);
+      $("#order-is").hide();
+      $(".amountstatus").html("");
+      let person = $("input#name").val();
+      let phone = $("input#phone").val();
+      let location = $("input#location").val();
+      if (
+        $("input#name").val() != "" &&
+        $("input#phone").val() != "" &&
+        $("input#location").val() != ""
+      ) {
+        $("button#checkout").hide();
+        $(".deliveryform").show();
+        // $(".deliveryform").slideDown(1000);
+        $(".deliveryinfo").hide();
+        $("#deliver").hide();
+        $("#final-order").show();
+        // $("#totalbill").hide();
+        $("button#final-order").show();
+        $(".amountstatus").slideDown(1000);
+        $(".deliveryinfo").hide();
+        let deliveryAmount = checkoutTotal + 100;
+        $(".amountstatus").append(
+          "<h4>Selected Items In Your Pizza(" +
+            allOrders +
+            ")<br>Your bill is sh. " +
+            checkoutTotal +
+            "</h4>"
+        );
+        $(".amountstatus").append(
+          "<h4>Your bill plus delivery fee Is : " + deliveryAmount + "</h4>"
+        );
+        $(".amountstatus").append(
+          "<h5>" +
+            person +
+            ", We have received your order and it will be delivered to you at " +
+            location +
+            " Prepare Sh. " +
+            deliveryAmount +
+            "</h5>"
+        );
+        // $(".amountstatus").append("<h5>"+person+", We have recieved your order and it will be delivered to you at " + location+" Prepare Sh. "+deliveryAmount+"</h5>");
+      } else {
+        alert("Please fill in the details for delivery!");
+        $(".deliver").show();
+        $(".deliveryform").show();
+        $(".deliveryform").slideDown(1000);
+        $(".deliveryinfo").show();
+        $(".deliveryinfo").slideDown(1000);
+        // $("button#final-order").show();
+      }
+    });
+    //home delivery button
+    $("button.deliver").click(function () {
+      $(".amountstatus").html("");
       $(".amountstatus").append(
         "<h4>Selected Items In Your Pizza(" +
-          AllOrders +
+          allOrders +
           ")<br>Your bill is sh. " +
           checkoutTotal +
           "</h4>"
       );
       $("#pizzatotal").append("Your bill is sh. " + checkoutTotal);
       $(".yourcheckout").show();
-      var yourcheckout = $("#ordersmade").html();
-      $("#yourcheckoutitems").html(yourcheckout);
+      var yourCheckout = $("#ordersmade").html();
+      $("#yourcheckoutitems").html(yourCheckout);
       $("#order-is").hide();
       $("#info").show();
-      $(".deliveryform").show();
-      $(".deliveryinfo").hide();
-      $("#final-order").show();
-    });
-    //home delivery button
-    $("button.deliver").click(function () {
-      // $(".yourcheckout").show();
-      // var yourcheckout = $("#ordersmade").html();
-      // alert(yourcheckout);
-      // $("#yourcheckoutitems").html(yourcheckout);
+      $(".deliver").hide();
 
-      //$(".pizzatable").hide();
-      // $(".order-ready h2").hide();
-      $(".delivery").slideDown(1000);
-      // $("#addedprice").hide();
-      $("button.deliver").hide();
-      // $("#pizzatotal").hide();
-      $("#final-order").show();
+      $(".deliveryform").show();
+      $(".deliveryform").slideDown(1000);
+      $(".deliveryinfo").hide();
+
+      $("#final-order").hide();
 
       let deliveryAmount = checkoutTotal + 100;
       console.log("You will pay sh. " + deliveryAmount + " on delivery");
       $(".amountstatus").append(
         "<h4>Your bill plus delivery fee Is : " +
           deliveryAmount +
-          "</h4>Ensure You Correctly Fill The Following Form"
+          "</h4>Ensure You Collectly Fill The Following Form"
       );
       $("#totalbill").append(
         "Your bill plus delivery fee is: " + deliveryAmount
@@ -216,7 +263,6 @@ $(document).ready(function () {
     $("button#final-order").click(function (event) {
       event.preventDefault();
       $("#pizzatotal").hide();
-      $(".delivery").hide();
       $("button#final-order").hide();
       let deliveryAmount = checkoutTotal + 100;
       console.log("Final Bill is: " + deliveryAmount);
@@ -230,18 +276,19 @@ $(document).ready(function () {
       ) {
         $("#finallmessage").append(
           person +
-            ", We have received your order and it will be delivered to you at " +
+            ", We have recieved your order and it will be delivered to you at " +
             location +
             ". Prepare sh. " +
             deliveryAmount
         );
         // $("#totalbill").hide();
+        $(".deliver").hide();
         $("#finallmessage").slideDown(1200);
         $(".deliveryinfo").hide();
         $(".amountstatus").html("");
         $(".amountstatus").append(
           "<h4>Selected Items In Your Pizza(" +
-            AllOrders +
+            allOrders +
             ")<br>Your bill is sh. " +
             checkoutTotal +
             "</h4>"
@@ -252,7 +299,7 @@ $(document).ready(function () {
         // $(".amountstatus").append("<h5>"+person+", We have recieved your order and it will be delivered to you at " + location+" Preapare Sh. "+deliveryAmount+"</h5>");
       } else {
         alert("Please fill in the details for delivery!");
-        $(".delivery").show();
+        $(".deliver").show();
         $("button#final-order").show();
       }
     });
